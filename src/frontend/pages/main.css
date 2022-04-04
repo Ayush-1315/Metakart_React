@@ -1,0 +1,180 @@
+@import url('https://hardcore-aryabhata-201d65.netlify.app/Css/main.css');
+
+.navigation-bar{
+    gap:60%;
+}
+
+body{
+    background: rgb(224, 220, 220);
+}
+.categories{
+    
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 3rem;
+    column-gap: 1rem;
+    
+}
+
+.categories img{
+    padding: 0;
+}
+
+#hover-img{
+    width:95%;
+}
+
+.hero-text{
+    text-align: center;
+    padding:1rem;
+    padding-bottom: 0;
+    font-size:xx-large;
+}
+
+footer{
+    background: rgb(83, 223, 223);
+}
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: .5fr repeat(3, 1fr) .5fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background-color: tomato;
+    justify-content: center;
+    }
+
+    
+    .simple-card{
+        max-width: 100%;
+    }
+
+    .simple-card h4, h5 ,p{
+        padding: 0;
+        margin: 0;
+    }
+
+    .pad{
+        padding-left: 20%;
+       
+    }
+
+    .inline{
+        display: flex;
+        gap:5px;
+        align-items: center;
+    }
+
+    strike{
+        font-size: .7rem;
+    }
+
+    label{
+        padding:0;
+        margin:0;
+        display: inline;
+    }
+    
+    .single{
+        display:flex;
+        justify-content: center;
+        gap:5px;
+    }
+
+    input{
+        padding:0;
+        margin:0;
+        width:10%;
+    }
+
+    .sidebar{
+        height: 250%;
+    }
+
+    .top-navbar{
+        background-color:rgb(83, 223, 223);
+    }
+
+i span{
+    position: relative;
+    bottom: 20px;
+    font-size: medium;
+}
+
+.top-menu{
+    margin: 0 auto;
+    text-align: center;
+}
+
+  #search1{
+    min-width:80%;
+}
+
+.top-navbar-icon img{
+    width: 80px;
+    height: 70px;
+}
+
+.avatar-div input{
+    width:60%;
+}
+
+.item{
+    width:600px;
+    border-radius: 10px;
+    padding:2rem 2rem;
+    
+    margin: auto;
+}
+
+.card-content p{
+    margin: 1rem 0rem;
+}
+
+.card-btn button{
+    background:rgb(224, 220, 220);
+}
+
+.checkout-div{
+    width:400px;
+    margin: auto;
+    background:white;
+}
+
+.amount-breakup{
+    display:flex;
+    justify-content: space-between;
+}
+
+.amount-breakup div{
+    padding: .5rem;
+}
+
+.price-head{
+    padding:.5rem;
+}
+
+.checkout-div{
+    border:ridge;
+}
+
+.cart-div{
+    display: flex;
+}
+
+.order-btn{
+    background:rgb(251, 100, 27);
+    padding:.5rem;
+    border:none;
+    border-radius: 5px;
+    margin-right: .8rem;
+    margin-bottom: .4rem; 
+    cursor: pointer;  
+}
+
+nav{
+    position: sticky;
+    top:0px;
+}
