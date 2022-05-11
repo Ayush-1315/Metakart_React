@@ -42,52 +42,65 @@ const Sidebar = () => {
 
         <h4>PRICE</h4>
         <div className="single">
-          <input type="radio" name="price" value="999"
-          checked={productstate.maxPrice === 999}
-          onChange={(e) => {
-            productdispatch({
-              type: "FILTER_BY_PRICE",
-              payload: Number(e.target.value),
-            });
-          }} />
+          <input
+            type="radio"
+            name="price"
+            value="999"
+            checked={productstate.maxPrice === 999}
+            onChange={(e) => {
+              productdispatch({
+                type: "FILTER_BY_PRICE",
+                payload: Number(e.target.value),
+              });
+            }}
+          />
           <label> upto Rs 999</label>
         </div>
         <div className="single">
-          <input type="radio" name="price" 
-          value="1999"
-          checked={productstate.maxPrice === 1999}
-          onChange={(e) => {
-            productdispatch({
-              type: "FILTER_BY_PRICE",
-              payload: Number(e.target.value),
-            });
-          }}/>
+          <input
+            type="radio"
+            name="price"
+            value="1999"
+            checked={productstate.maxPrice === 1999}
+            onChange={(e) => {
+              productdispatch({
+                type: "FILTER_BY_PRICE",
+                payload: Number(e.target.value),
+              });
+            }}
+          />
           <label> upto Rs 1999</label>
           <br />
         </div>
         <div className="single">
-          <input type="radio" name="price" 
-          value="2999"
-          checked={productstate.maxPrice === 2999}
-          onChange={(e) => {
-            productdispatch({
-              type: "FILTER_BY_PRICE",
-              payload: Number(e.target.value),
-            });
-          }}/>
+          <input
+            type="radio"
+            name="price"
+            value="2999"
+            checked={productstate.maxPrice === 2999}
+            onChange={(e) => {
+              productdispatch({
+                type: "FILTER_BY_PRICE",
+                payload: Number(e.target.value),
+              });
+            }}
+          />
           <label> upto Rs 2999</label>
           <br />
         </div>
         <div className="single">
-          <input type="radio" name="price" 
-          value="4999"
-          checked={productstate.maxPrice === 4999}
-          onChange={(e) => {
-            productdispatch({
-              type: "FILTER_BY_PRICE",
-              payload: Number(e.target.value),
-            });
-          }} />
+          <input
+            type="radio"
+            name="price"
+            value="4999"
+            checked={productstate.maxPrice === 4999}
+            onChange={(e) => {
+              productdispatch({
+                type: "FILTER_BY_PRICE",
+                payload: Number(e.target.value),
+              });
+            }}
+          />
           <label> upto Rs 4999</label>
           <br />
         </div>
@@ -163,7 +176,7 @@ const Sidebar = () => {
           <label for="category5"> Shoes</label>
           <br />
         </div>
-        
+
         <br />
         <h4>RATING</h4>
         <div className="single">
@@ -273,7 +286,7 @@ const Sidebar = () => {
         <button
           className="btn"
           onClick={() => {
-              console.log("clicked")
+            console.log("clicked");
             productdispatch({
               type: "CLEAR",
             });
@@ -285,4 +298,4 @@ const Sidebar = () => {
     </div>
   );
 };
-export {Sidebar};
+export { Sidebar };

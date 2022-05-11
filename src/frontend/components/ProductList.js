@@ -59,7 +59,7 @@ export default function ProductList() {
   //   productstate.latest
   // );
 
-  console.log(FinalfilteredProducts);
+  console.log(pricedProducts);
 
   return (
     <div className="pad">
