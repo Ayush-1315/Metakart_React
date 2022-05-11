@@ -6,20 +6,21 @@ import Appp from "./frontend/pages/product";
 import Cart from "./frontend/pages/cart";
 import Signin from "./frontend/pages/signin";
 import Signup from "./frontend/pages/signup";
+import { ProductProvider } from "./frontend/context/productListing-context";
 function App() {
   return (
     <div className="App">
       
       
-      
+      <ProductProvider>
       <Routes>   
-          <Route path = '/' element= {<Appp/> } /> 
-          <Route path = '/home' element = {<Home/>} />
+          <Route path = '/' element= {<Home/> } /> 
+          <Route path = '/products' element = {<Appp/>} />
           <Route path = '/cart' element = {<Cart/>} />
           <Route path = '/signin' element = {<Signin/>} />
           <Route path = '/signup' element = {<Signup/>} />
       </Routes>
-      
+      </ProductProvider>
       
     </div>
   );

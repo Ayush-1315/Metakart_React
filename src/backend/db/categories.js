@@ -12,7 +12,7 @@ export const categories = [
     description:
       "literature in the form of prose, especially novels, that describes imaginary events and people",
     image: "https://bit.ly/3uSLmR4",
-    path:"/"
+    path:"/products"
   },
   {
     _id: uuid(),
@@ -20,7 +20,7 @@ export const categories = [
     description:
       "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
       image: "https://bit.ly/3sBdN3l",
-      path:"/"
+      path:"/products"
   },
   {
     _id: uuid(),
@@ -28,7 +28,7 @@ export const categories = [
     description:
       "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
       image: "https://bit.ly/3gGa4fh",
-      path:"/"
+      path:"/products"
   },
   {
     _id: uuid(),
@@ -36,7 +36,7 @@ export const categories = [
     description:
       "Non-fiction is writing that gives information or describes real events, rather than telling a story.",
       image: "https://bit.ly/3oInQm2",
-      path:"/"
+      path:"/products"
   },
   {
     _id: uuid(),
@@ -44,6 +44,6 @@ export const categories = [
     description:
       "Meant to cause discomfort and fear for both the character and readers, horror writers often make use of supernatural and paranormal elements in morbid stories that are sometimes a little too realistic.",
       image: "https://bit.ly/3uKE1mB",
-      path:"/"
+      path:"/products"
   },
 ];

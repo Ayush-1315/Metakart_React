@@ -1,72 +1,288 @@
-import React from 'react';
+import React from "react";
 import "../pages/main.css";
+import { useProductListing } from "../context/productListing-context";
 
-export default function Sidebar(){
-    return(
-        <div className="sidebar">
-        <div className="components">
-            <h3 className="sidebar-heading">FILTERS</h3> 
-            <h4>PRICE</h4>
-            <div className="single">
-            <input type="checkbox"  name="price1" />
-            <label for="price1"> Rs 499 to Rs 999</label></div>
-            <div className="single">
-            <input type="checkbox"  name="price2" />
-            <label for="price2"> Rs 999 to Rs 1999</label><br/></div>
-            <div className="single">
-            <input type="checkbox"  name="price3" />
-            <label for="price3"> Rs 199 to Rs 2999</label><br/></div>
-            <div className="single">
-            <input type="checkbox"  name="price4" />
-            <label for="price4"> Rs 2999 to Rs 4999</label><br/></div>
-            <br/>
-    
-            <h4>CATEGORIES</h4>
-            <div className="single">
-            <input type="checkbox"  name="category1" />
-            <label for="category1"> Shirt</label></div>
-            <div className="single">
-            <input type="checkbox"  name="category2" />
-            <label for="category2"> TShirt</label><br/></div>
-            <div className="single">
-            <input type="checkbox"  name="category3" />
-            <label for="category3"> Jeans</label><br/></div>
-            <div className="single">
-            <input type="checkbox"  name="category4" />
-            <label for="category4"> SweatShirt</label><br/></div>
-            <div className="single">
-            <input type="checkbox"  name="category5" />
-            <label for="category5"> Trouser</label><br/></div>
-            <div className="single">
-            <input type="checkbox"  name="category6" />
-            <label for="category6"> Jacket</label><br/></div>
-            <div className="single">
-            <input type="checkbox"  name="category7" />
-            <label for="category7"> Boxer</label><br/></div>
-                    <br/>
-            <h4>RATING</h4>
-            <div className="single">
-            <input type="checkbox"  name="rating1" />
-            <label for="rating1"> <i className="fa fa-star"></i></label></div>
-            <div className="single">
-            <input type="checkbox"  name="rating2" />
-            <label for="rating2"> <i className="fa fa-star"></i><i className="fa fa-star"></i></label><br/></div>
-            <div className="single">
-            <input type="checkbox"  name="rating3" />
-            <label for="rating3"> <i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i></label><br/></div>
-            <div className="single">
-            <input type="checkbox"  name="rating4" />
-            <label for="rating4"> <i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i></label><br/></div>
-            <div className="single">
-            <input type="checkbox"  name="rating5" />
-            <label for="rating5"> <i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i><i className="fa fa-star"></i> <i className="fa fa-star"></i></label><br/></div>
+const Sidebar = () => {
+  const { productstate, productdispatch } = useProductListing();
+  return (
+    <div className="sidebar">
+      <div className="components">
+        <h3 className="sidebar-heading">FILTERS</h3>
+        <h4>SORT BY</h4>
+        <div className="single">
+          <input
+            type="radio"
+            name="sort"
+            id="high_to_low"
+            checked={productstate.sortBy === "HIGH_TO_LOW"}
+            onChange={() => {
+              productdispatch({
+                type: "HIGH_TO_LOW",
+              });
+            }}
+          />
+          <label> High To Low</label>
+        </div>
+        <div className="single">
+          <input
+            type="radio"
+            name="sort"
+            id="low_to_high"
+            checked={productstate.sortBy === "LOW_TO_HIGH"}
+            onChange={() => {
+              productdispatch({
+                type: "LOW_TO_HIGH",
+              });
+            }}
+          />
+          <label> Low To High</label>
+          <br />
+        </div>
+        <br />
+
+        <h4>PRICE</h4>
+        <div className="single">
+          <input type="radio" name="price" value="999"
+          checked={productstate.maxPrice === 999}
+          onChange={(e) => {
+            productdispatch({
+              type: "FILTER_BY_PRICE",
+              payload: Number(e.target.value),
+            });
+          }} />
+          <label> upto Rs 999</label>
+        </div>
+        <div className="single">
+          <input type="radio" name="price" 
+          value="1999"
+          checked={productstate.maxPrice === 1999}
+          onChange={(e) => {
+            productdispatch({
+              type: "FILTER_BY_PRICE",
+              payload: Number(e.target.value),
+            });
+          }}/>
+          <label> upto Rs 1999</label>
+          <br />
+        </div>
+        <div className="single">
+          <input type="radio" name="price" 
+          value="2999"
+          checked={productstate.maxPrice === 2999}
+          onChange={(e) => {
+            productdispatch({
+              type: "FILTER_BY_PRICE",
+              payload: Number(e.target.value),
+            });
+          }}/>
+          <label> upto Rs 2999</label>
+          <br />
+        </div>
+        <div className="single">
+          <input type="radio" name="price" 
+          value="4999"
+          checked={productstate.maxPrice === 4999}
+          onChange={(e) => {
+            productdispatch({
+              type: "FILTER_BY_PRICE",
+              payload: Number(e.target.value),
+            });
+          }} />
+          <label> upto Rs 4999</label>
+          <br />
+        </div>
+        <br />
+
+        <h4>CATEGORIES</h4>
+        <div className="single">
+          <input
+            type="checkbox"
+            name="category1"
+            checked={productstate.categories.Shirt}
+            onChange={() => {
+              productdispatch({
+                type: "Shirt",
+              });
+            }}
+          />
+          <label for="category1"> Shirt</label>
+        </div>
+        <div className="single">
+          <input
+            type="checkbox"
+            name="category2"
+            checked={productstate.categories.Saree}
+            onChange={() => {
+              productdispatch({
+                type: "Saree",
+              });
+            }}
+          />
+          <label for="category2"> Saree</label>
+          <br />
+        </div>
+        <div className="single">
+          <input
+            type="checkbox"
+            name="category3"
+            checked={productstate.categories.Jeans}
+            onChange={() => {
+              productdispatch({
+                type: "Jeans",
+              });
+            }}
+          />
+          <label for="category3"> Jeans</label>
+          <br />
+        </div>
+        <div className="single">
+          <input
+            type="checkbox"
+            name="category4"
+            checked={productstate.categories.Activewear}
+            onChange={() => {
+              productdispatch({
+                type: "Activewear",
+              });
+            }}
+          />
+          <label for="category4"> Activewear</label>
+          <br />
+        </div>
+        <div className="single">
+          <input
+            type="checkbox"
+            name="category5"
+            checked={productstate.categories.Shoes}
+            onChange={() => {
+              productdispatch({
+                type: "Shoes",
+              });
+            }}
+          />
+          <label for="category5"> Shoes</label>
+          <br />
+        </div>
         
-            <button className="btn">CLEAR ALL FILTERS </button>
-        
+        <br />
+        <h4>RATING</h4>
+        <div className="single">
+          <input
+            type="radio"
+            name="rating"
+            value="1"
+            checked={productstate.ratings === 1}
+            onChange={(e) => {
+              productdispatch({
+                type: "FILTER_BY_RATINGS",
+                payload: Number(e.target.value),
+              });
+            }}
+          />
+          <label>
+            {" "}
+            <i className="fa fa-star"></i>
+          </label>
+        </div>
+        <div className="single">
+          <input
+            type="radio"
+            name="rating"
+            value="2"
+            checked={productstate.ratings === 2}
+            onChange={(e) => {
+              productdispatch({
+                type: "FILTER_BY_RATINGS",
+                payload: Number(e.target.value),
+              });
+            }}
+          />
+          <label>
+            {" "}
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+          </label>
+          <br />
+        </div>
+        <div className="single">
+          <input
+            type="radio"
+            name="rating"
+            value="3"
+            checked={productstate.ratings === 3}
+            onChange={(e) => {
+              productdispatch({
+                type: "FILTER_BY_RATINGS",
+                payload: Number(e.target.value),
+              });
+            }}
+          />
+          <label>
+            {" "}
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+          </label>
+          <br />
+        </div>
+        <div className="single">
+          <input
+            type="radio"
+            name="rating"
+            value="4"
+            checked={productstate.ratings === 4}
+            onChange={(e) => {
+              productdispatch({
+                type: "FILTER_BY_RATINGS",
+                payload: Number(e.target.value),
+              });
+            }}
+          />
+          <label>
+            {" "}
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+          </label>
+          <br />
+        </div>
+        <div className="single">
+          <input
+            type="radio"
+            name="rating"
+            value="5"
+            checked={productstate.ratings === 5}
+            onChange={(e) => {
+              productdispatch({
+                type: "FILTER_BY_RATINGS",
+                payload: Number(e.target.value),
+              });
+            }}
+          />
+          <label>
+            {" "}
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i>
+            <i className="fa fa-star"></i> <i className="fa fa-star"></i>
+          </label>
+          <br />
         </div>
 
-
-        
+        <button
+          className="btn"
+          onClick={() => {
+              console.log("clicked")
+            productdispatch({
+              type: "CLEAR",
+            });
+          }}
+        >
+          CLEAR ALL FILTERS{" "}
+        </button>
+      </div>
     </div>
-    );
-}
+  );
+};
+export {Sidebar};
