@@ -118,7 +118,7 @@ const Sidebar = () => {
               });
             }}
           />
-          <label for="category1"> Shirt</label>
+          <label> Shirt</label>
         </div>
         <div className="single">
           <input
@@ -131,7 +131,7 @@ const Sidebar = () => {
               });
             }}
           />
-          <label for="category2"> Saree</label>
+          <label> Saree</label>
           <br />
         </div>
         <div className="single">
@@ -145,7 +145,7 @@ const Sidebar = () => {
               });
             }}
           />
-          <label for="category3"> Jeans</label>
+          <label> Jeans</label>
           <br />
         </div>
         <div className="single">
@@ -159,7 +159,7 @@ const Sidebar = () => {
               });
             }}
           />
-          <label for="category4"> Activewear</label>
+          <label> Activewear</label>
           <br />
         </div>
         <div className="single">
@@ -173,7 +173,7 @@ const Sidebar = () => {
               });
             }}
           />
-          <label for="category5"> Shoes</label>
+          <label> Shoes</label>
           <br />
         </div>
 
