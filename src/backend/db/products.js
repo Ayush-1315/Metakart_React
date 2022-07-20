@@ -15,6 +15,7 @@ export const products = [
     categoryName: "Shirt",
     image:"https://bit.ly/34D1GuL",
     rating:"4.2",
+    qty:"1",
   },
   {
     _id: uuid(),
@@ -25,6 +26,7 @@ export const products = [
     categoryName: "Shirt",
     image:"https://bit.ly/3BhlRdr",
     rating:"3.8",
+    qty:"1",
   },
   {
     _id: uuid(),
@@ -35,6 +37,7 @@ export const products = [
     categoryName: "Shirt",
     image:"https://bit.ly/3oLqTKd",
     rating:"4.1",
+    qty:"1",
   },
   {
     _id: uuid(),
@@ -45,6 +48,7 @@ export const products = [
     categoryName: "Shirt",
     image:"https://bit.ly/3Bf1ZYF",
     rating:"4.5",
+    qty:"1",
   },
   {
     _id: uuid(),
@@ -55,6 +59,7 @@ export const products = [
     categoryName: "Shirt",
     image:"https://bit.ly/3rKrI84",
     rating:"5",
+    qty:"1",
   },
   {
     _id: uuid(),
@@ -65,6 +70,7 @@ export const products = [
     categoryName: "Shirt",
     image:"https://bit.ly/3HL6ht9",
     rating:"2.9",
+    qty:"1",
   },
   {
     _id: uuid(),
@@ -75,6 +81,7 @@ export const products = [
     categoryName: "Shirt",
     image:"https://bit.ly/34O2blo",
     rating:"3.5",
+    qty:"1",
   },
   {
     _id: uuid(),
@@ -85,6 +92,7 @@ export const products = [
     categoryName: "Shirt",
     image:"https://bit.ly/34RHBRg",
     rating:"4.7",
+    qty:"1",
   },
 // category 2
 {
@@ -96,6 +104,7 @@ export const products = [
   categoryName: "Shoes",
   image:"https://bit.ly/3GFSGSF",
   rating:"1.7",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -106,6 +115,7 @@ export const products = [
   categoryName: "Shoes",
   image:"https://bit.ly/3HOYPxc",
   rating:"2.8",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -116,6 +126,7 @@ export const products = [
   categoryName: "Shoes",
   image:"https://bit.ly/3BhVAM5",
   rating:"4.8",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -126,6 +137,7 @@ export const products = [
   categoryName: "Shoes",
   image:"https://bit.ly/3LtAyiq",
   rating:"3.1",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -136,6 +148,7 @@ export const products = [
   categoryName: "Shoes",
   image:"https://bit.ly/3HMAbgt",
   rating:"2.8",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -146,6 +159,7 @@ export const products = [
   categoryName: "Shoes",
   image:"https://bit.ly/3HZavNG",
   rating:"3.6",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -156,6 +170,7 @@ export const products = [
   categoryName: "Shoes",
   image:"https://bit.ly/3rUuAzv",
   rating:"2.9",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -166,6 +181,7 @@ export const products = [
   categoryName: "Shoes",
   image:"https://bit.ly/3oLzU5Z",
   rating:"1.6",
+  qty:"1",
 },
 
 // Sarees
@@ -178,6 +194,7 @@ export const products = [
   categoryName: "Saree",
   image:"https://bit.ly/3GGsQ0B",
   rating:"1.9",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -188,6 +205,7 @@ export const products = [
   categoryName: "Saree",
   image:"https://bit.ly/36aArrT",
   rating:"4.9",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -198,6 +216,7 @@ export const products = [
   categoryName: "Saree",
   image:"https://bit.ly/3JsSqIv",
   rating:"3.4",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -208,6 +227,7 @@ export const products = [
   categoryName: "Saree",
   image:"https://bit.ly/3rNuHwF",
   rating:"4.8",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -218,6 +238,7 @@ export const products = [
   categoryName: "Saree",
   image:"https://bit.ly/3t0w36H",
   rating:"3.6",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -228,6 +249,7 @@ export const products = [
   categoryName: "Saree",
   image:"https://bit.ly/3oRwYVs",
   rating:"2.6",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -238,6 +260,7 @@ export const products = [
   categoryName: "Saree",
   image:"https://bit.ly/3rOvlty",
   rating:"5",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -248,6 +271,7 @@ export const products = [
   categoryName: "Saree",
   image:"https://bit.ly/36gTi4z",
   rating:"4.2",
+  qty:"1",
 },
 
 // Activewear
@@ -260,6 +284,7 @@ export const products = [
   categoryName: "Activewear",
   image:"https://bit.ly/3HSMgB2",
   rating:"1.7",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -270,6 +295,7 @@ export const products = [
   categoryName: "Activewear",
   image:"https://bit.ly/3oRiHIq",
   rating:"3.4",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -280,6 +306,7 @@ export const products = [
   categoryName: "Activewear",
   image:"https://bit.ly/3oUhkJ3",
   rating:"4.2",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -290,6 +317,7 @@ export const products = [
   categoryName: "Activewear",
   image:"https://bit.ly/3sIGLOL",
   rating:"2.1",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -300,6 +328,7 @@ export const products = [
   categoryName: "Activewear",
   image:"https://bit.ly/3rRe1nK",
   rating:"4.8",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -310,6 +339,7 @@ export const products = [
   categoryName: "Activewear",
   image:"https://bit.ly/3sK7cUl",
   rating:"5",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -320,6 +350,7 @@ export const products = [
   categoryName: "Activewear",
   image:"https://bit.ly/3rTkQ8q",
   rating:"2.8",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -330,6 +361,7 @@ export const products = [
   categoryName: "Activewear",
   image:"https://bit.ly/3GSFXMq",
   rating:"4.7",
+  qty:"1",
 },
 
 // Jeans
@@ -342,6 +374,7 @@ export const products = [
   categoryName: "Jeans",
   image:"https://bit.ly/3LDFIs7",
   rating:"1.8",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -352,6 +385,7 @@ export const products = [
   categoryName: "Jeans",
   image:"https://bit.ly/3HW8cuS",
   rating:"2.8",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -362,6 +396,7 @@ export const products = [
   categoryName: "Jeans",
   image:"https://bit.ly/3Jvsj3t",
   rating:"5",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -372,6 +407,7 @@ export const products = [
   categoryName: "Jeans",
   image:"https://bit.ly/3Lx2rWV",
   rating:"2.2",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -382,6 +418,7 @@ export const products = [
   categoryName: "Jeans",
   image:"https://bit.ly/3BmeKk9",
   rating:"3.7",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -392,6 +429,7 @@ export const products = [
   categoryName: "Jeans",
   image:"https://bit.ly/3uQp96f",
   rating:"4.9",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -402,6 +440,7 @@ export const products = [
   categoryName: "Jeans",
   image:"https://bit.ly/3BmLYjr",
   rating:"2.1",
+  qty:"1",
 },
 {
   _id: uuid(),
@@ -412,6 +451,7 @@ export const products = [
   categoryName: "Jeans",
   image:"https://bit.ly/3HTFGdj",
   rating:"4.3",
+  qty:"1",
 },
 
 ];

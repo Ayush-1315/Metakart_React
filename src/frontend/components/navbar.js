@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
+import { useCart } from "../context/cart-context";
 import "../pages/main.css";
 
 export default function Navbar() {
   const { auth } = useAuth();
+  const { cart } = useCart();
   const showname = `Hi ${localStorage.getItem("name")}`;
   return (
     <nav className="top-navbar">
@@ -40,7 +42,7 @@ export default function Navbar() {
         &nbsp;&nbsp;&nbsp;
         <Link className="top-menu" to={auth.token ? "/cart" : "/signin"}>
           <i className="fa fa-shopping-cart fa-2x">
-            <span>2</span>
+            <span>{cart.cartProducts.length}</span>
           </i>
         </Link>{" "}
         &nbsp;&nbsp;

@@ -1,121 +1,90 @@
-import React from 'react';
- import "./main.css";
+import React from "react";
+import "./main.css";
 import Navbar from "../components/navbar";
 import Footer from "../components/footer";
-import {Link} from "react-router-dom";
+import { useCart } from "../context/cart-context";
+import CartCard from "../components/cartCard";
+import { totalPrice, totalQty } from "../utils/totalPriceAndQuantity";
 
 function Cart() {
-  return (<>
-    
-            
-            <Navbar/>
-    
-    <div className="cart-div">
+  const { cart, setCart } = useCart();
+  let finalQuantity;
+  let finalPrice;
+
+  if (cart.cartProducts.length > 0) {
+    finalQuantity = totalQty(cart.cartProducts);
+    finalPrice = totalPrice(cart.cartProducts);
+  } else {
+    finalQuantity = 0;
+    finalPrice = 0;
+  }
+
+  return (
+    <>
+      <Navbar />
+      <div>
+        {" "}
+        {cart.cartProducts.length === 0 && <h1>Oops.... Your Cart is Empty</h1>}
+      </div>
+      <div className="cart-div">
         <div className="item">
-            {/* <!-- Horizontal Card --> */}
-
-   <div className="horizontal-card">
-    <div>
-    <img src="https://bit.ly/3BhVAM5" alt="image"/>
-    </div>
-    <div className="card-content">
-                         <h2>
-                             Sport Shoes
-                         </h2>
-       <h4>
-       By :- ADIDAS  <span className="rate"> 4.8 &nbsp;<i className="fa fa-star"></i></span>
-       </h4>
-       <p>
-        Men's sport Running Shoes
-       <br/><br/>
-       <span className="price"> ₹1,499</span> <i> <strike>₹1,999 </strike>18% off </i>
-                         </p>
-                         <div className="card-btn">
-                             <div><button><li className="fa fa-minus"></li></button><button style={{margin:'8px', padding:'.4rem 1rem'}}>1</button> <button><li className="fa fa-plus"></li></button></div>
-                             <button>Save For Later</button>
-                             <button>Remove</button>
-                         </div>
-                     </div>
-                 </div>
-
-                 <hr/> 
-                 <div className="horizontal-card">
-                    <div>
-                    <img src="https://bit.ly/34D1GuL" alt="image"/>
-                    </div>
-                    <div className="card-content">
-                                         <h2>
-                                             CASUAL SHIRT
-                                         </h2>
-                       <h4>
-                       By :- HIGHLANDER  <span className="rate"> 4.8 &nbsp;<i className="fa fa-star"></i></span>
-                       </h4>
-                       <p>
-                       Slim Fit Casual Shirt
-                       <br/><br/>
-                       <span className="price"> ₹799</span> <i> <strike>₹999 </strike>20% off </i>
-                                         </p>
-                                         <div className="card-btn">
-                                            <div><button><li className="fa fa-minus"></li></button><button style={{margin:'8px', padding:'.4rem 1rem'}}>1</button> <button><li className="fa fa-plus"></li></button></div>
-                                            <button>Save For Later</button>
-                                            <button>Remove</button>
-                                         </div>
-                                     </div>
-                                 </div>
-
-
+          {cart.cartProducts &&
+            cart.cartProducts.map((products) => (
+              <CartCard products={products} key={products._id} />
+            ))}
         </div>
-        <div className="checkout-div">
-                        <div className="price-head">PRICE DETAILS</div>
-                        <hr/>
-                        <div className="amount-breakup">
-                            <div>
-                                Price (2 items)
-                            </div>
-                            <div>
-                                ₹2,998
-                            </div>
-                        </div>
+      </div>
 
-                        <div className="amount-breakup">
-                            <div>
-                                Discount
-                            </div>
-                            <div>
-                                <span style={{color : 'green' }}>-₹600</span>
-                            </div>
-                        </div>
-
-                        <div className="amount-breakup">
-                            <div>
-                                Delivery charges 
-                            </div>
-                            <div>
-                                <span style={{color : 'green' }}> FREE  </span>
-                            </div>
-                        </div>
-
-                        <hr/>
-                        <div className="amount-breakup">
-                            <div>
-                                <h3>TOTAL PRICE</h3> 
-                            </div>
-                            <div>
-                                <h3>₹2,298</h3>
-                            </div>
-                        </div>
-
-                        <hr/>
-                        <div className="price-head"><span style={{color : 'green' }}> You Will save ₹600 on this order</span></div>
-                        <hr/>
-                        <div style={{textAlign: 'right'}}><button className="order-btn"> <span> PLACE ORDER </span> </button></div>
+      <div className="checkout-div">
+        <div className="price-head">PRICE DETAILS</div>
+        <hr />
+        <div className="amount-breakup">
+          <div>Price ({finalQuantity} items)</div>
+          <div>₹{finalPrice}</div>
         </div>
-    </div>
 
-        
-        <Footer/>
-        
-        </>
+        <div className="amount-breakup">
+          <div>Discount</div>
+          <div>
+            <span style={{ color: "green" }}>-₹{finalPrice * (8 / 100)}</span>
+          </div>
+        </div>
+
+        <div className="amount-breakup">
+          <div>Delivery charges</div>
+          <div>
+            <span style={{ color: "green" }}> FREE </span>
+          </div>
+        </div>
+
+        <hr />
+        <div className="amount-breakup">
+          <div>
+            <h3>TOTAL PRICE</h3>
+          </div>
+          <div>
+            <h3>₹{finalPrice - finalPrice * (8 / 100)}</h3>
+          </div>
+        </div>
+
+        <hr />
+        <div className="price-head">
+          <span style={{ color: "green" }}>
+            {" "}
+            You Will save ₹{finalPrice * (8 / 100)} on this order
+          </span>
+        </div>
+        <hr />
+        <div style={{ textAlign: "right" }}>
+          <button className="order-btn">
+            {" "}
+            <span> PLACE ORDER </span>{" "}
+          </button>
+        </div>
+      </div>
+
+      <Footer />
+    </>
   );
 }
 
