@@ -90,7 +90,7 @@ footer{
     }
 
     .sidebar{
-        height: 250%;
+        height: 400%;
     }
 
     .top-navbar{
@@ -162,6 +162,8 @@ i span{
 
 .cart-div{
     display: flex;
+    
+    
 }
 
 .order-btn{
@@ -177,4 +179,19 @@ i span{
 nav{
     position: sticky;
     top:0px;
+}
+
+.card-div{
+    display:flex;
+    flex-flow:row wrap;
+    row-gap:2rem;
+    column-gap: 1rem;
+}
+
+.rate-pro{
+    background: green;
+    color:ghostwhite;
+    padding: .2rem;
+    font-weight:bolder;
+    font-size:smaller;
 }

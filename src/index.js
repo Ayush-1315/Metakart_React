@@ -9,13 +9,16 @@ import Signup from "./frontend/pages/signup"
 import Signin from "./frontend/pages/signin"
 import { makeServer } from "./server";
 import {BrowserRouter} from "react-router-dom";
+import { ProductProvider } from "./frontend/context/productListing-context";
 
 // Call make Server
 makeServer();
 
 ReactDOM.render(
 <BrowserRouter>
+  <ProductProvider>
    <App/>
+   </ProductProvider>
 </BrowserRouter>,
   document.getElementById("root")
 );
