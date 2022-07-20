@@ -121,7 +121,6 @@ const Sidebar = () => {
 
           <label> Shirt</label>
 
-
         </div>
         <div className="single">
           <input
