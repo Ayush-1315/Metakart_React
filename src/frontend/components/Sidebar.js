@@ -118,7 +118,10 @@ const Sidebar = () => {
               });
             }}
           />
+
           <label> Shirt</label>
+
+
         </div>
         <div className="single">
           <input
@@ -131,7 +134,9 @@ const Sidebar = () => {
               });
             }}
           />
+
           <label> Saree</label>
+
           <br />
         </div>
         <div className="single">
@@ -145,7 +150,9 @@ const Sidebar = () => {
               });
             }}
           />
+
           <label> Jeans</label>
+
           <br />
         </div>
         <div className="single">
@@ -159,6 +166,7 @@ const Sidebar = () => {
               });
             }}
           />
+
           <label> Activewear</label>
           <br />
         </div>
@@ -173,7 +181,9 @@ const Sidebar = () => {
               });
             }}
           />
+
           <label> Shoes</label>
+
           <br />
         </div>
 
