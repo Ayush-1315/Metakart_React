@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/auth-context";
 import { useCart } from "../context/cart-context";
 import { useWishlist } from "../context/wishlist-context";
+import { useProductListing } from "../context/productListing-context";
 import "../pages/main.css";
 
 export default function Navbar() {
@@ -10,6 +11,13 @@ export default function Navbar() {
   const { cart } = useCart();
   const { wishlist } = useWishlist();
   const showname = `Hi ${localStorage.getItem("name")}`;
+  const { productstate, productdispatch } = useProductListing();
+  const searchHandler = (e) =>{ 
+    productdispatch({
+      type: "FILTER_BY_SEARCH",
+      payload: e.target.value
+    })
+  }
   return (
     <nav className="top-navbar">
       <div className="top-navbar-icon">
@@ -18,13 +26,10 @@ export default function Navbar() {
         </Link>
         <div className="title">MetaKart</div>
       </div>
-      <div className="single">
-        <label
-          style={{ color: "white", padding: ".5rem" }}
-          className="fa fa-search fa-2x"
-        ></label>
-        <input type="search" name="search" id="search1" placeholder="Search" />
-      </div>
+      
+      
+        <input className = "search-box" type="search" name="search" id="search1" placeholder =" &#xf002; Search" onChange = {searchHandler} />
+      
 
       <div className="top-navbar-menu">
         <Link
@@ -37,7 +42,9 @@ export default function Navbar() {
                 {showname} <i className="fa fa-sign-out fa-2x" />
               </i>
             ) : (
-              "Login"
+            <i>
+               Login <i className="fa fa-sign-in fa-2x" />
+            </i>
             )}{" "}
           </button>
         </Link>{" "}

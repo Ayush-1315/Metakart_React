@@ -150,9 +150,6 @@ export default function Signin() {
                 })
               }
             />
-            <a href="#" id="forgot">
-              Forgot Password?
-            </a>
             <br /> <Link to="/signup">Do Not Have Account? SignUp Here </Link>
           </form>
         </div>

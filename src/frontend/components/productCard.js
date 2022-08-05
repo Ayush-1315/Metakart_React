@@ -9,6 +9,7 @@ import { toast } from "react-toastify";
 import { useWishlist } from "../context/wishlist-context";
 import { addProductsToWishlist } from "../services/addProductsToWishlist";
 import { removeProductsFromWishlist } from "../services/removeProductsToWishlist";
+import {debounce} from "../utils";
 
 export default function ProductCard({ products }) {
   const navigate = useNavigate();
@@ -98,7 +99,7 @@ export default function ProductCard({ products }) {
             auth.isAuth
               ? inCart
                 ? () => navigate("/cart")
-                : () => addtocart()
+                : debounce(() => addtocart())
               : () => navigate("/signin")
           }
         >
@@ -108,8 +109,8 @@ export default function ProductCard({ products }) {
           onClick={
             auth.isAuth
               ? inwishlist
-                ? () => removeFromWishlist()
-                : () => addToWishlist()
+                ? debounce(() => removeFromWishlist())
+                : debounce(() => addToWishlist())
               : () => navigate("/signin")
           }
         >

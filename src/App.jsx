@@ -10,6 +10,7 @@ import { ProductProvider } from "./frontend/context/productListing-context";
 import Mockman from "mockman-js";
 import Signout from "./frontend/pages/signout";
 import { Wishlist } from "./frontend/pages/wishlist";
+import {Ordersummary} from "./frontend/pages/ordersummary"
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ function App() {
           <Route path="/mock" element={<Mockman />} />
           <Route path="/signout" element={<Signout />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/summary" element={<Ordersummary />} />
         </Routes>
       </ProductProvider>
     </div>

@@ -5,6 +5,7 @@ import Footer from "../components/footer";
 import { useCart } from "../context/cart-context";
 import CartCard from "../components/cartCard";
 import { totalPrice, totalQty } from "../utils/totalPriceAndQuantity";
+import { Link } from "react-router-dom";
 
 function Cart() {
   const { cart, setCart } = useCart();
@@ -23,8 +24,7 @@ function Cart() {
     <>
       <Navbar />
       <div>
-        {" "}
-        {cart.cartProducts.length === 0 && <h1>Oops.... Your Cart is Empty</h1>}
+        {cart.cartProducts.length === 0 && <h1 style= {{margin:"26vh 0vh" }}>Oops.... Your Cart is Empty</h1>}
       </div>
       <div className="cart-div">
         <div className="item">
@@ -34,19 +34,20 @@ function Cart() {
             ))}
         </div>
       </div>
+      
 
-      <div className="checkout-div">
+      {cart.cartProducts.length != 0 &&<div className="checkout-div">
         <div className="price-head">PRICE DETAILS</div>
         <hr />
         <div className="amount-breakup">
           <div>Price ({finalQuantity} items)</div>
-          <div>₹{finalPrice}</div>
+          <div>₹{Math.round(finalPrice)}</div>
         </div>
 
         <div className="amount-breakup">
           <div>Discount</div>
           <div>
-            <span style={{ color: "green" }}>-₹{finalPrice * (8 / 100)}</span>
+            <span style={{ color: "green" }}>-₹{Math.round(finalPrice * (8 / 100))}</span>
           </div>
         </div>
 
@@ -63,7 +64,7 @@ function Cart() {
             <h3>TOTAL PRICE</h3>
           </div>
           <div>
-            <h3>₹{finalPrice - finalPrice * (8 / 100)}</h3>
+            <h3>₹{Math.round(finalPrice - finalPrice * (8 / 100))}</h3>
           </div>
         </div>
 
@@ -71,17 +72,17 @@ function Cart() {
         <div className="price-head">
           <span style={{ color: "green" }}>
             {" "}
-            You Will save ₹{finalPrice * (8 / 100)} on this order
+            You Will save ₹{Math.round(finalPrice * (8 / 100))} on this order
           </span>
         </div>
         <hr />
         <div style={{ textAlign: "right" }}>
           <button className="order-btn">
             {" "}
-            <span> PLACE ORDER </span>{" "}
+            <Link to = "/summary" className="top-menu"> PLACE ORDER </Link>{" "}
           </button>
         </div>
-      </div>
+      </div>}              
 
       <Footer />
     </>

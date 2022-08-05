@@ -39,7 +39,7 @@ function Signup() {
           token: token,
           isAuth: true,
         });
-        navigate("/signin");
+        navigate("/");
       }
     })();
   }, [errors]);
@@ -159,18 +159,18 @@ function Signup() {
               <div className="option">
                 <input
                   type="radio"
-                  name="Mygender"
+                  name="Mygender1"
                   required
                   value="Male"
                   id="male"
-                  checked
+                  
                 />{" "}
                 <label for="male">Male</label>
               </div>
               <div className="option">
                 <input
                   type="radio"
-                  name="Mygender"
+                  name="Mygender2"
                   required
                   value="Female"
                   id="female"
@@ -180,11 +180,29 @@ function Signup() {
             </div>
             <input
               type="submit"
-              id="send"
+              id="send1"
               className="input-block"
               value="Sign Up"
               onClick={(x) => SignupHandler(x)}
             />
+            <input
+              type="submit"
+              id="send"
+              className="input-block"
+              value="Use Dummy Data"
+              onClick={(x) =>
+                setSignupForm({
+                  ...SignupForm,
+                  firstname : "Ayush",
+                  lastname : "Raj",
+                  email: "ayushraj@gmail.com",
+                  password: "Abc@123",
+                  password_CFR : "Abc@123",
+                  Mygender1 : true,
+                })
+              }
+            />
+
             <Link to="/signin" id="forgot">
               Registered Already? /Sign In
             </Link>
