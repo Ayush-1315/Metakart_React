@@ -23,7 +23,6 @@ export default function HomepageCategories() {
   useEffect(() => getCategories(), []);
 
   const categorySelector = (category) => {
-    console.log(category);
     productdispatch({
       type: "CLEAR",
     });

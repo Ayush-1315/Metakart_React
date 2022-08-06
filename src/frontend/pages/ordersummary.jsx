@@ -1,9 +1,15 @@
 import Footer from "../components/footer";
 import Navbar from "../components/navbar";
 import { Link } from "react-router-dom";
+import { useCart } from "../context/cart-context";
+import { useAuth } from "../context/auth-context";
+import { removeFromCart } from "../services/removeFromCart";
 const Ordersummary = () => {
-  
+const {auth} = useAuth();
+const {cart} = useCart();
 
+cart.cartProducts.map((products) => {removeFromCart(products._id, auth.token)});
+cart.cartProducts = [];
   return (
     <>
       <Navbar />

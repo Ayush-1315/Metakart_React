@@ -102,6 +102,7 @@ export default function Signin() {
             <br />
             <i
               class={!showpass ? "fa fa-eye" : "fa fa-eye-slash"}
+              style = {{cursor:"pointer"}}
               aria-hidden="true"
               onClick={() => setShowPass(!showpass)}
             >
@@ -109,6 +110,7 @@ export default function Signin() {
               Show Password
             </i>
             {Error.password && <div>{Error.password}</div>}
+            <br/>
             <div className="log">
               <input type="checkbox" id="keep" name="logged" defaultChecked />
               <label for="keep" className="checked">

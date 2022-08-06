@@ -6,6 +6,7 @@ import { useCart } from "../context/cart-context";
 import CartCard from "../components/cartCard";
 import { totalPrice, totalQty } from "../utils/totalPriceAndQuantity";
 import { Link } from "react-router-dom";
+import toast from "react-hot-toast";
 
 function Cart() {
   const { cart, setCart } = useCart();
@@ -24,7 +25,7 @@ function Cart() {
     <>
       <Navbar />
       <div>
-        {cart.cartProducts.length === 0 && <h1 style= {{margin:"26vh 0vh" }}>Oops.... Your Cart is Empty</h1>}
+        {cart.cartProducts.length === 0 && <div><h1 style= {{margin:"26vh 0vh" }}>Oops.... Your Cart is Empty</h1> <button className="btn "><Link to ="/products" className="top-menu">Shop Now </Link></button></div>}
       </div>
       <div className="cart-div">
         <div className="item">
@@ -77,7 +78,7 @@ function Cart() {
         </div>
         <hr />
         <div style={{ textAlign: "right" }}>
-          <button className="order-btn">
+          <button className="order-btn" onClick={()=>toast.success("Order placed successfully")}>
             {" "}
             <Link to = "/summary" className="top-menu"> PLACE ORDER </Link>{" "}
           </button>
