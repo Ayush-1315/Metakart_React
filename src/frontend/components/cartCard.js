@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { addProductsToWishlist } from "../services/addProductsToWishlist";
 import { useWishlist } from "../context/wishlist-context";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
 
 export default function CartCard({ products }) {
   const { auth } = useAuth();
@@ -34,7 +34,7 @@ export default function CartCard({ products }) {
         toast.success(` ${products.title} removed from Cart`);
       } else {
         res = await updateQuantity(products._id, auth.token, type);
-        toast.info("Cart Updated Sucessfully");
+        toast.success("Cart Updated Sucessfully");
       }
 
       if (res.status === 200) {
@@ -65,7 +65,6 @@ export default function CartCard({ products }) {
               type: "SET_WISHLIST",
               payload: res.data.wishlist,
             });
-            console.log(res.data.wishlist);
             toast.success(`${products.title} added to the wishlist`);
 
             const cartItem = await removeFromCart(products._id, auth.token);

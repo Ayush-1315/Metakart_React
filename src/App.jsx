@@ -10,9 +10,12 @@ import { ProductProvider } from "./frontend/context/productListing-context";
 import Mockman from "mockman-js";
 import Signout from "./frontend/pages/signout";
 import { Wishlist } from "./frontend/pages/wishlist";
+import {Ordersummary} from "./frontend/pages/ordersummary"
+import { ToastWrapper } from "./frontend/components/toastWrap";
 function App() {
   return (
     <div className="App">
+      <ToastWrapper/>
       <ProductProvider>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -23,6 +26,7 @@ function App() {
           <Route path="/mock" element={<Mockman />} />
           <Route path="/signout" element={<Signout />} />
           <Route path="/wishlist" element={<Wishlist />} />
+          <Route path="/summary" element={<Ordersummary />} />
         </Routes>
       </ProductProvider>
     </div>

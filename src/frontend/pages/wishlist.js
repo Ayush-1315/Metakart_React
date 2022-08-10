@@ -2,6 +2,8 @@ import Footer from "../components/footer";
 import { useWishlist } from "../context/wishlist-context";
 import Navbar from "../components/navbar";
 import ProductCard from "../components/productCard";
+import { Link } from "react-router-dom";
+
 const Wishlist = () => {
   const { wishlist } = useWishlist();
 
@@ -12,7 +14,7 @@ const Wishlist = () => {
         <div>
           <div className="card-div">
             {wishlist.wishlistProducts.length === 0 && (
-              <h1>Oops.. Wishlist is Empty</h1>
+              <div> <h1>Oops.. Wishlist is Empty</h1> <button className="btn" style={{marginTop:"5rem"}}><Link to ="/products" className="top-menu">Shop Now </Link></button></div>
             )}
 
             {wishlist.wishlistProducts.map((products) => (

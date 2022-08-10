@@ -8,6 +8,18 @@ const Sidebar = () => {
     <div className="sidebar">
       <div className="components">
         <h3 className="sidebar-heading">FILTERS</h3>
+        <button
+          style={{background:"Green"}}
+          className="btn"
+          onClick={() => {
+            console.log("clicked");
+            productdispatch({
+              type: "CLEAR",
+            });
+          }}
+        >
+          VIEW ALL PRODUCTS{" "}
+        </button>
         <h4>SORT BY</h4>
         <div className="single">
           <input
@@ -291,7 +303,6 @@ const Sidebar = () => {
           </label>
           <br />
         </div>
-
         <button
           className="btn"
           onClick={() => {
@@ -302,7 +313,7 @@ const Sidebar = () => {
           }}
         >
           CLEAR ALL FILTERS{" "}
-        </button>
+        </button>        
       </div>
     </div>
   );

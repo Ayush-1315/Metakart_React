@@ -44,6 +44,7 @@ export default function Signout() {
               value={localStorage.getItem("name")}
               className="input-block"
               disabled
+              style= {{  border:"none",textAlign:"center"}}
             />
 
             <label>
@@ -60,6 +61,7 @@ export default function Signout() {
               placeholder={localStorage.getItem("email")}
               value={localStorage.getItem("email")}
               disabled
+              style= {{  border:"none", textAlign:"center"}}
             />
 
             <input

@@ -1,18 +1,20 @@
 import React from "react";
 import "../pages/main.css";
+import Navbar from "./navbar";
 import { useProductListing } from "../context/productListing-context";
 import {
   getFilteredCatProducts,
   getRatedProducts,
   getSortedProducts,
   getPricedProducts,
+  getSearchedProducts,
 } from "../utils/index";
 import ProductCard from "./productCard";
 
 export default function ProductList() {
   const { products, productstate, productdispatch } = useProductListing();
-
-  const sortedProducts = getSortedProducts(products, productstate.sortBy);
+  const searchedProducts = getSearchedProducts(products, productstate.search);
+  const sortedProducts = getSortedProducts(searchedProducts, productstate.sortBy);
   const filteredProducts = getFilteredCatProducts(
     sortedProducts,
     productstate.categories.Shirt,
@@ -31,10 +33,13 @@ export default function ProductList() {
     productstate.ratings
   );
 
-  // console.log(pricedProducts);
+  
 
   return (
     <div className="pad">
+      <div >
+        {FinalfilteredProducts.length === 0 && <h1>Oops.... No Items matching your search</h1>}
+      </div>
       <div className="card-div ">
         {FinalfilteredProducts.map((items) => (
           <ProductCard products={items} key={items._id} />
@@ -42,4 +47,5 @@ export default function ProductList() {
       </div>
     </div>
   );
+
 }
